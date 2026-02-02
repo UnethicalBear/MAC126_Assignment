@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://dgbi2wbluci82"]
+
+[node name="Root" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="RichTextLabel" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[center][font_size=64]Thermo-Bird"
+
+[node name="LevelContainer" type="GridContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.12
+columns = 4
+
+[node name="Level1" type="Button" parent="LevelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Level 1:
+Nomenclature"
+
+[node name="Level2" type="Button" parent="LevelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Level 2:
+Fundamentals of Thermofluids"
+
+[node name="Level3" type="Button" parent="LevelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Level 3:
+Thermodynamic Properties"
+
+[node name="Level4" type="Button" parent="LevelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Level 4:
+Specific Heat, Enthalpy & Entropy"
+
+[node name="Level5" type="Button" parent="LevelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Level 5:
+Steam"
+
+[node name="Level6" type="Button" parent="LevelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Level 6:
+Thermodynamic Properties"
+
+[node name="Level7" type="Button" parent="LevelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Level 7:
+Vapour Mixtures"
+
+[node name="Level8" type="Button" parent="LevelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Level 8:
+Conversion Factors"
+
+[node name="DISABLED1" type="Button" parent="LevelContainer"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+light_mask = 0
+visibility_layer = 0
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+disabled = true
+
+[node name="Level9" type="Button" parent="LevelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Level 9:
+Additional General Info"
+
+[node name="Level10" type="Button" parent="LevelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Level 10:
+Everything!"
+
+[node name="DISABLED" type="Button" parent="LevelContainer"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+light_mask = 0
+visibility_layer = 0
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+disabled = true
+
+[node name="SettingsContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
