@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Thermo"
-run/main_scene="uid://dntcwtg287jyg"
+run/main_scene="uid://dgbi2wbluci82"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://Assets/icon.svg"
 
 [autoload]
 
 QuestionLoader="*res://Scripts/QuestionLoader.gd"
+Globals="*res://Scripts/Globals.gd"
 
 [display]
 

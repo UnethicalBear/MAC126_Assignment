@@ -14,15 +14,16 @@ func SetQuestion(Q: Question) -> void:
 	
 	answer = Q.answer
 	
+	$VBoxContainer/Options/Numerical.hide()
+	$VBoxContainer/Options/Option1.hide()
+	$VBoxContainer/Options/Option2.hide()
+	$VBoxContainer/Options/Option3.hide()
+	$VBoxContainer/Options/Option4.hide()
+	
 	if Q.type == "NUMERICAL":
 		$VBoxContainer/Options/Numerical.show()
-		$VBoxContainer/Options/Option1.hide()
-		$VBoxContainer/Options/Option2.hide()
-		$VBoxContainer/Options/Option3.hide()
-		$VBoxContainer/Options/Option4.hide()
 	
 	else:
-		$VBoxContainer/Options/Numerical.hide()
 		var i: int = 1
 	
 		for option: String in Q.options:
@@ -45,12 +46,10 @@ func Answered(id: int) -> void:
 		got = find_child("Numerical").text
 		
 	if got == answer:
-		print("YOU WON")
 		hide()
 		$"..".show()
 		get_tree().paused=false
 	else:
-		print("YOU LOST")
 		hide()
 		$"..".show()
 		$"../LoseScreen".show()

@@ -51,6 +51,6 @@ func wakeup() -> void:
 func QuestionPopup(area:Area2D) -> void:
 	area.hide()
 	area.get_parent().get_parent().pushLeft()
-	QWindow.SetQuestion(QuestionLoader.GetQuestion())
+	QWindow.SetQuestion(QuestionLoader.GetQuestion(Globals.LEVEL_CATEGORY))
 	$"..".hide()
 	get_tree().paused=true
