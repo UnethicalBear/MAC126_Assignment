@@ -15,6 +15,14 @@ run/main_scene="uid://dntcwtg287jyg"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://Assets/icon.svg"
 
+[autoload]
+
+QuestionLoader="*res://Scripts/QuestionLoader.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"
+
 [input]
 
 JUMP={
