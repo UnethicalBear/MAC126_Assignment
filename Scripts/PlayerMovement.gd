@@ -3,6 +3,7 @@ extends RigidBody2D
 @onready var LoseScreen: VBoxContainer = $"../LoseScreen"
 @onready var AnimatedSprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var GateHandler: Node2D = $"../Gates"
+@onready var QWindow: Window = $"../QWindow"
 
 @export var FORCE_SCALE: float = 600
 var SCREEN_SIZE: Vector2
@@ -25,9 +26,13 @@ func reverseAnimation():
 func _ready() -> void:
 	SCREEN_SIZE = DisplayServer.screen_get_size()
 	body_entered.connect(_collide)
+	
+	$Area2D.area_entered.connect(QuestionPopup)
+	
 	AnimatedSprite.animation_finished.connect(reverseAnimation)
 	
 func _collide(_discard: Variant) -> void:
+	print(_discard)
 	set_deferred("freeze", true)
 	sleeping=true
 	gravity_scale = 0
@@ -42,4 +47,10 @@ func wakeup() -> void:
 	show()
 	GateHandler.wake()
 	gravity_scale = 1
-	
+
+func QuestionPopup(area:Area2D) -> void:
+	area.hide()
+	area.get_parent().get_parent().pushLeft()
+	QWindow.SetQuestion(QuestionLoader.GetQuestion())
+	$"..".hide()
+	get_tree().paused=true

@@ -43,6 +43,16 @@ func CheckWraparound(Gate: Node2D) -> void:
 func SetGateY(Gate: Node2D) -> void:
 	Gate.position.y = RNG.randf_range(-160, 200)
 	
+	var q: Area2D = Gate.find_child("Question")
+	
+	if RNG.randi_range(0,1):
+		q.show()
+		q.monitorable=true
+	else:
+		q.hide()
+		q.monitorable=false
+		
+	 
 func sleep() -> void:
 	GATE_SPEED = 0
 	hide()
@@ -50,3 +60,9 @@ func sleep() -> void:
 func wake() -> void:
 	GATE_SPEED = _GATE_SPEED
 	show()
+	
+func pushLeft() -> void:
+	MoveGate(G1, 2)
+	MoveGate(G2, 2)
+	MoveGate(G3, 2)
+	MoveGate(G4, 2)
