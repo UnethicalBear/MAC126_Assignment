@@ -48,6 +48,7 @@ func Answered(id: int) -> void:
 	if got == answer:
 		hide()
 		$"..".show()
+		$"../CorrectAnswer".play()
 		get_tree().paused=false
 	else:
 		hide()
@@ -55,4 +56,5 @@ func Answered(id: int) -> void:
 		$"../LoseScreen".show()
 		$"../PlayerRB".hide()
 		$"../Gates".hide()
+		$"../Dead".play()
 		get_tree().paused=false

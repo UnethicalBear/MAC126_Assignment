@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dntcwtg287jyg"]
+[gd_scene load_steps=20 format=3 uid="uid://dntcwtg287jyg"]
 
 [ext_resource type="Script" uid="uid://iykh0strsi7x" path="res://Scripts/FixUIPos.gd" id="1_8gbba"]
 [ext_resource type="Script" uid="uid://du2h4agc3q6sf" path="res://Scripts/PlayerMovement.gd" id="1_bo1nx"]
@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://cdnv8su1e3k5a" path="res://Assets/question.jpg" id="7_6bp64"]
 [ext_resource type="Script" uid="uid://e1ws37uel5ig" path="res://Scripts/QWindow.gd" id="8_344ge"]
 [ext_resource type="Script" uid="uid://cey71qsw8ar2" path="res://Scripts/LineEditHandler.gd" id="9_ynf5e"]
+[ext_resource type="AudioStream" uid="uid://rh8mvujrvaj7" path="res://Assets/correct_answer.wav" id="10_hptm8"]
+[ext_resource type="AudioStream" uid="uid://bd1ok2cki0s1l" path="res://Assets/soundtrack_1.ogg" id="11_6iyac"]
+[ext_resource type="AudioStream" uid="uid://1fdkto1ugwln" path="res://Assets/wrong_answer.wav" id="11_d1ilt"]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_21xkr"]
 points = PackedVector2Array(-64, -20.5, -64, -6.5, -14, 43.5, -8, 45.5, 9, 45.5, 64, 17.5, 64, 2.5, 19, -43.5, -24, -46.5)
@@ -27,6 +30,17 @@ animations = [{
 }],
 "loop": false,
 "name": &"fly",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8gbba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_21xkr")
+}],
+"loop": false,
+"name": &"fly2",
 "speed": 5.0
 }]
 
@@ -142,7 +156,6 @@ shape = SubResource("ConvexPolygonShape2D_21xkr")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerRB"]
 sprite_frames = SubResource("SpriteFrames_kry3j")
 animation = &"fly"
-frame_progress = 0.6486359
 
 [node name="Area2D" type="Area2D" parent="PlayerRB"]
 
@@ -381,3 +394,29 @@ visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Option 4"
+
+[node name="CorrectAnswer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("10_hptm8")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("11_6iyac")
+autoplay = true
+parameters/looping = true
+
+[node name="Dead" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("11_d1ilt")
+
+[node name="Score" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -308.0
+offset_bottom = 71.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 64
+text = "Score: 999"
+horizontal_alignment = 2
