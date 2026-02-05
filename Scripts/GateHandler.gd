@@ -35,7 +35,7 @@ func MoveGate(gate: Node2D, delta: float) -> void:
 	gate.position -= GATE_DELTA * delta
 
 func CheckWraparound(Gate: Node2D) -> void:
-	if Gate.position.x < -35:
+	if Gate.position.x < -75:
 		Gate.position.x = 1380
 		SetGateY(Gate)
 		move_child(Gate, -1)
