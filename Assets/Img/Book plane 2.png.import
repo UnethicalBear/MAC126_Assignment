@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdnv8su1e3k5a"
-path="res://.godot/imported/question.jpg-6f46a3936f5af057c8bc58ac30b5fdb1.ctex"
+uid="uid://87i24djvrhwt"
+path="res://.godot/imported/Book plane 2.png-096f5bb5e4e23d9ebcff4e88109fdf8d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/question.jpg"
-dest_files=["res://.godot/imported/question.jpg-6f46a3936f5af057c8bc58ac30b5fdb1.ctex"]
+source_file="res://Assets/Img/Book plane 2.png"
+dest_files=["res://.godot/imported/Book plane 2.png-096f5bb5e4e23d9ebcff4e88109fdf8d.ctex"]
 
 [params]
 
