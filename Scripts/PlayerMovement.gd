@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-@onready var LoseScreen: VBoxContainer = $"../LoseScreen"
+@onready var EndScreen: VBoxContainer = $"../EndScreen"
 @onready var AnimatedSprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var GateHandler: Node2D = $"../Gates"
 @onready var QWindow: Window = $"../QWindow"
@@ -8,49 +8,64 @@ extends RigidBody2D
 @export var FORCE_SCALE: float = 600
 var SCREEN_SIZE: Vector2
 
-var AnimationReversed: bool = false
+var fallTime: float = 0 
+const idleFallLimit: float = 0.35
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("JUMP"):
-		linear_velocity.y = -FORCE_SCALE
-		AnimatedSprite.play("fly")
-		AnimationReversed=false
-	
-func reverseAnimation():
-	if AnimationReversed:
-		# just stop here
-		return
-	AnimationReversed=true
-	AnimatedSprite.play("fly",1, true)
-
+#region GODOT INHERITED
+ 
 func _ready() -> void:
 	SCREEN_SIZE = DisplayServer.screen_get_size()
 	body_entered.connect(_collide)
 	
 	$Area2D.area_entered.connect(QuestionPopup)
 	
-	AnimatedSprite.animation_finished.connect(reverseAnimation)
+	AnimatedSprite.play("fly")
 	
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("JUMP"):
+		linear_velocity.y = - FORCE_SCALE
+
+		if AnimatedSprite.animation != "fly":
+			AnimatedSprite.play("fly")
+
+
+func _physics_process(delta: float) -> void:
+	if linear_velocity.y > 0:
+		fallTime += delta
+	else:
+		fallTime = 0.0
+
+	if fallTime >= idleFallLimit:
+		AnimatedSprite.play("fall")
+
+#endregion	
+
+#region GAME LOGIC
+
 func _collide(_discard: Variant) -> void:
-	print(_discard)
+	$"../Dead".play()
 	set_deferred("freeze", true)
-	sleeping=true
+	sleeping = true
 	gravity_scale = 0
 	global_position.y = SCREEN_SIZE.y * 0.1
-	LoseScreen.show()
+	EndScreen.show()
 	hide()
+	$Area2D.set_deferred("monitorable", false)
+	$Area2D.monitoring = false
 	GateHandler.sleep()
 
 func wakeup() -> void:
 	set_deferred("freeze", false)
-	sleeping=true
+	sleeping = true
 	show()
 	GateHandler.wake()
 	gravity_scale = 1
 
-func QuestionPopup(area:Area2D) -> void:
+func QuestionPopup(area: Area2D) -> void:
 	area.hide()
 	area.get_parent().get_parent().pushLeft()
 	QWindow.SetQuestion(QuestionLoader.GetQuestion(Globals.LEVEL_CATEGORY))
 	$"..".hide()
-	get_tree().paused=true
+	get_tree().paused = true
+
+#endregion

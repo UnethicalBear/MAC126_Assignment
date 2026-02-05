@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dntcwtg287jyg"]
+[gd_scene load_steps=37 format=3 uid="uid://dntcwtg287jyg"]
 
 [ext_resource type="Script" uid="uid://iykh0strsi7x" path="res://Scripts/FixUIPos.gd" id="1_8gbba"]
 [ext_resource type="Script" uid="uid://du2h4agc3q6sf" path="res://Scripts/PlayerMovement.gd" id="1_bo1nx"]
@@ -27,16 +27,10 @@ points = PackedVector2Array(-64, -20.5, -64, -6.5, -14, 43.5, -8, 45.5, 9, 45.5,
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_wsu2k")
-}, {
-"duration": 1.0,
 "texture": ExtResource("4_h1bgf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_b3802")
 }],
-"loop": false,
-"name": &"fly",
+"loop": true,
+"name": &"fall",
 "speed": 5.0
 }, {
 "frames": [{
@@ -46,8 +40,19 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("5_b3802")
 }],
+"loop": true,
+"name": &"fly",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_wsu2k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wsu2k")
+}],
 "loop": false,
-"name": &"fly2",
+"name": &"idle",
 "speed": 5.0
 }]
 
@@ -79,16 +84,22 @@ size = Vector2(118, 472)
 size = Vector2(160, 421.125)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pdsj5"]
-size = Vector2(116, 484.5)
+size = Vector2(108, 492.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ee4r6"]
 size = Vector2(136, 404)
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kry3j"]
+size = Vector2(100, 150)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8gbba"]
 size = Vector2(79, 484.5)
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kry3j"]
-size = Vector2(100, 150)
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_fevyy"]
+size = Vector2(100, 625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gt3je"]
+size = Vector2(100, 624)
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -136,7 +147,7 @@ size_flags_horizontal = 3
 text = "Quit to Main Menu"
 
 [node name="PlayerRB" type="RigidBody2D" parent="."]
-position = Vector2(115, 297)
+position = Vector2(115, 300)
 lock_rotation = true
 contact_monitor = true
 max_contacts_reported = 2
@@ -274,14 +285,14 @@ scale = Vector2(0.305, 0.63)
 texture = ExtResource("12_b3802")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate3/Gate_3A"]
-position = Vector2(-1, -148)
+position = Vector2(0, -148.125)
 shape = SubResource("RectangleShape2D_pdsj5")
 
 [node name="Gate_3B" type="StaticBody2D" parent="Gates/Gate3"]
 position = Vector2(0, 29)
 
 [node name="Portobello" type="Sprite2D" parent="Gates/Gate3/Gate_3B"]
-position = Vector2(0, 3.0517578e-05)
+position = Vector2(6, -63.999992)
 scale = Vector2(2.115, 3.83)
 texture = ExtResource("13_fevyy")
 
@@ -306,26 +317,25 @@ position = Vector2(1481, 0)
 [node name="Gate_4A" type="StaticBody2D" parent="Gates/Gate4"]
 position = Vector2(0, 862)
 
+[node name="Sprite2D" type="Sprite2D" parent="Gates/Gate4/Gate_4A"]
+position = Vector2(0, -148)
+scale = Vector2(1, 4.16)
+texture = SubResource("PlaceholderTexture2D_kry3j")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate4/Gate_4A"]
 position = Vector2(0, -148)
 shape = SubResource("RectangleShape2D_8gbba")
 
-[node name="Sprite2D" type="Sprite2D" parent="Gates/Gate4/Gate_4A"]
-position = Vector2(0, -147.99998)
-scale = Vector2(1, 4.16)
-texture = SubResource("PlaceholderTexture2D_kry3j")
-
 [node name="Gate_4B" type="StaticBody2D" parent="Gates/Gate4"]
 position = Vector2(0, 29)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate4/Gate_4B"]
-position = Vector2(0, -148)
-shape = SubResource("RectangleShape2D_8gbba")
-
 [node name="Sprite2D" type="Sprite2D" parent="Gates/Gate4/Gate_4B"]
 position = Vector2(0, -147.99998)
-scale = Vector2(1, 4.16)
-texture = SubResource("PlaceholderTexture2D_kry3j")
+texture = SubResource("PlaceholderTexture2D_fevyy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate4/Gate_4B"]
+position = Vector2(0, -148)
+shape = SubResource("RectangleShape2D_gt3je")
 
 [node name="Question" type="Area2D" parent="Gates/Gate4"]
 position = Vector2(0, 295)

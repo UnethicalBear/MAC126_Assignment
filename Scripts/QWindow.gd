@@ -44,17 +44,15 @@ func Answered(id: int) -> void:
 		got = find_child("Option"+str(id)).text
 	else:
 		got = find_child("Numerical").text
-		
+	
 	if got == answer:
 		hide()
 		$"..".show()
 		$"../CorrectAnswer".play()
+		$"../Score".incrementScore()
 		get_tree().paused=false
 	else:
 		hide()
 		$"..".show()
-		$"../LoseScreen".show()
-		$"../PlayerRB".hide()
-		$"../Gates".hide()
-		$"../Dead".play()
+		$"../PlayerRB"._collide(0)
 		get_tree().paused=false
