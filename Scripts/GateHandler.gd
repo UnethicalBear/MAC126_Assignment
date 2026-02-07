@@ -5,8 +5,7 @@ extends Node2D
 @onready var G3: Node2D = $Gate3
 @onready var G4: Node2D = $Gate4
 
-@export var GATE_SPEED: float = 100
-var _GATE_SPEED: float = GATE_SPEED
+var GATE_SPEED: float = Globals.GATE_SPEED
 var GATE_DELTA: Vector2
 
 var RNG: RandomNumberGenerator = RandomNumberGenerator.new()
@@ -45,24 +44,23 @@ func SetGateY(Gate: Node2D) -> void:
 	
 	var q: Area2D = Gate.find_child("Question")
 	
-	if RNG.randi_range(0,1):
+	if RNG.randf_range(0,1) <= Globals.Q_CHANCE and Globals.Q_CHANCE > 0:
 		q.show()
 		q.monitorable=true
 	else:
 		q.hide()
 		q.monitorable=false
-		
 	 
 func sleep() -> void:
 	GATE_SPEED = 0
 	hide()
 
 func wake() -> void:
-	GATE_SPEED = _GATE_SPEED
+	GATE_SPEED = Globals.GATE_SPEED
 	show()
 	
 func pushLeft() -> void:
-	MoveGate(G1, 2)
-	MoveGate(G2, 2)
-	MoveGate(G3, 2)
-	MoveGate(G4, 2)
+	MoveGate(G1, Globals.GATE_PUSH_FWD)
+	MoveGate(G2, Globals.GATE_PUSH_FWD)
+	MoveGate(G3, Globals.GATE_PUSH_FWD)
+	MoveGate(G4, Globals.GATE_PUSH_FWD)

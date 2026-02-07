@@ -119,3 +119,31 @@ disabled = true
 [node name="SettingsContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 0.41
+
+[node name="MusicBtn" type="Button" parent="SettingsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+text = "Mute Music"
+
+[node name="SFXBtn" type="Button" parent="SettingsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+text = "Mute SFX"
+
+[node name="DifficultyBtn" type="Button" parent="SettingsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Difficulty: Easy"
+
+[node name="InstructionsBtn" type="Button" parent="SettingsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "How to Play"
+
+[node name="CreditsBtn" type="Button" parent="SettingsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Credits"
