@@ -415,16 +415,19 @@ text = "Option 4"
 [node name="CorrectAnswer" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 stream = ExtResource("10_hptm8")
+bus = &"SFX"
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 stream = ExtResource("11_6iyac")
 autoplay = true
+bus = &"Music"
 parameters/looping = true
 
 [node name="Dead" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 stream = ExtResource("11_d1ilt")
+bus = &"SFX"
 
 [node name="Score" type="Label" parent="."]
 layout_mode = 1

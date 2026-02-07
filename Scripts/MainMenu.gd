@@ -24,6 +24,15 @@ func _ready() -> void:
 		child.pressed.connect(LoadLevel.bind(child.name))
 
 	$SettingsContainer/DifficultyBtn.pressed.connect(ChangeDifficultyMode)
+	$SettingsContainer/SFXBtn.pressed.connect(MuteSFX)
+	$SettingsContainer/MusicBtn.pressed.connect(MuteMusic)
+
+	if Globals.SFXMuted:
+		MuteSFX()
+		MuteSFX()
+	if Globals.MusicMuted:
+		MuteMusic()
+		MuteMusic()
 
 func LoadLevel(ButtonPressed: String) -> void:
 	Globals.LEVEL_CATEGORY = LevelDict[ButtonPressed]
@@ -45,3 +54,25 @@ func ChangeDifficultyMode() -> void:
 	Globals.Q_CHANCE = DifficultyData[DifficultyMode][2]
 	Globals.GATE_PUSH_FWD = DifficultyData[DifficultyMode][3]
 
+
+func MuteSFX() -> void:
+	if AudioServer.is_bus_mute(1):
+		$SettingsContainer/SFXBtn.text = "Mute SFX"
+		AudioServer.set_bus_mute(1,false)
+		Globals.SFXMuted = false
+
+	else:
+		$SettingsContainer/SFXBtn.text = "SFX MUTED"
+		AudioServer.set_bus_mute(1,true)
+		Globals.SFXMuted = true
+
+func MuteMusic() -> void:
+	if AudioServer.is_bus_mute(2):
+		$SettingsContainer/MusicBtn.text = "Mute Music"
+		AudioServer.set_bus_mute(2,false)
+		Globals.MusicMuted = false
+
+	else:
+		$SettingsContainer/MusicBtn.text = "MUSIC MUTED"
+		AudioServer.set_bus_mute(2,true)
+		Globals.MusicMuted = true
