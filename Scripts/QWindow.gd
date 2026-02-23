@@ -22,7 +22,10 @@ func SetQuestion(Q: Question) -> void:
 	
 	if Q.type == "NUMERICAL":
 		$VBoxContainer/Options/Numerical.show()
-	
+		$VBoxContainer/Options/Numerical.NUMBER_MODE = 1
+	elif Q.type == "WRITTEN":
+		$VBoxContainer/Options/Numerical.show()
+		$VBoxContainer/Options/Numerical.NUMBER_MODE = 0
 	else:
 		var i: int = 1
 	
@@ -44,8 +47,13 @@ func Answered(id: int) -> void:
 		got = find_child("Option"+str(id)).text
 	else:
 		got = find_child("Numerical").text
+
+		if not find_child("Numerical").NUMBER_MODE:
+			got = got.strip_edges()
+			got = got.to_lower()
 	
 	if got == answer:
+		Achievements.CorrectQuestion()
 		hide()
 		$"..".show()
 		$"../CorrectAnswer".play()

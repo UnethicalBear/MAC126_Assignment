@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dntcwtg287jyg"]
+[gd_scene format=3 uid="uid://dntcwtg287jyg"]
 
 [ext_resource type="Script" uid="uid://iykh0strsi7x" path="res://Scripts/FixUIPos.gd" id="1_8gbba"]
 [ext_resource type="Script" uid="uid://du2h4agc3q6sf" path="res://Scripts/PlayerMovement.gd" id="1_bo1nx"]
@@ -6,19 +6,82 @@
 [ext_resource type="Texture2D" uid="uid://lovuf8asm0jg" path="res://Assets/Img/Book plane 2-2.png" id="4_h1bgf"]
 [ext_resource type="Texture2D" uid="uid://i517a82t8688" path="res://Assets/Img/Book plane 2-3.png" id="5_b3802"]
 [ext_resource type="Script" uid="uid://i6swa0ainueh" path="res://Scripts/GateHandler.gd" id="6_21xkr"]
+[ext_resource type="Script" uid="uid://jvsjwo35bf1e" path="res://Scripts/Background.gd" id="7_3pmx8"]
 [ext_resource type="Script" uid="uid://e1ws37uel5ig" path="res://Scripts/QWindow.gd" id="8_344ge"]
 [ext_resource type="Texture2D" uid="uid://cai8jfexqsxra" path="res://Assets/Buildings/SU2.png" id="8_h1bgf"]
-[ext_resource type="Texture2D" uid="uid://d081vjslcx7m7" path="res://Assets/Img/question.jpg" id="9_b3802"]
+[ext_resource type="Shader" uid="uid://7bipt0dwmp7k" path="res://Shaders/3d2d.gdshader" id="9_hibaj"]
 [ext_resource type="Texture2D" uid="uid://02cm58523tij" path="res://Assets/Buildings/diamond.png" id="9_k12tt"]
+[ext_resource type="Script" uid="uid://brs5h6uowb5f5" path="res://Scripts/clouds.gd" id="9_ueoa1"]
 [ext_resource type="Script" uid="uid://cey71qsw8ar2" path="res://Scripts/LineEditHandler.gd" id="9_ynf5e"]
 [ext_resource type="AudioStream" uid="uid://rh8mvujrvaj7" path="res://Assets/SFX/correct_answer.wav" id="10_hptm8"]
+[ext_resource type="Texture2D" uid="uid://d081vjslcx7m7" path="res://Assets/Img/question.png" id="10_pdsj5"]
 [ext_resource type="AudioStream" uid="uid://bd1ok2cki0s1l" path="res://Assets/SFX/soundtrack_1.ogg" id="11_6iyac"]
 [ext_resource type="AudioStream" uid="uid://1fdkto1ugwln" path="res://Assets/SFX/wrong_answer.wav" id="11_d1ilt"]
 [ext_resource type="Texture2D" uid="uid://bm8y2eablvdvn" path="res://Assets/Buildings/arts.jpeg" id="12_b3802"]
 [ext_resource type="Script" uid="uid://bihb5bkdvbodo" path="res://Scripts/ScoreHandler.gd" id="13_fdnlq"]
 [ext_resource type="Texture2D" uid="uid://cc3ajwwgy6eve" path="res://Assets/Buildings/Porto.png" id="13_fevyy"]
 [ext_resource type="Texture2D" uid="uid://ch4rwrvkvidwp" path="res://Assets/Buildings/StGeorge.png" id="14_jkdf5"]
+[ext_resource type="Texture2D" uid="uid://d112vlvu3evaf" path="res://Assets/Buildings/mappin.png" id="15_pdsj5"]
+[ext_resource type="Texture2D" uid="uid://taeud740urpi" path="res://Assets/Buildings/firth.png" id="16_ee4r6"]
 [ext_resource type="Texture2D" uid="uid://bcwn8v12kxkjb" path="res://Assets/Buildings/hicks.png" id="17_h1bgf"]
+[ext_resource type="Texture2D" uid="uid://c78dakoowtqcl" path="res://Assets/Img/bg1.png" id="23_gt3je"]
+[ext_resource type="Texture2D" uid="uid://b5dfrt8rfwm3x" path="res://Assets/Clouds/cloud1.png" id="25_u50mg"]
+[ext_resource type="Texture2D" uid="uid://b2okqw4ixvw30" path="res://Assets/Clouds/cloud3.png" id="26_cbgmd"]
+[ext_resource type="Texture2D" uid="uid://dthcyq1lpwx73" path="res://Assets/Clouds/cloud4.png" id="27_1w6v2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6bp64"]
+size = Vector2(1152, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_21xkr"]
+size = Vector2(1152, 100)
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_fevyy"]
+points = PackedVector2Array(-84, -84.5, -111, 61.5, -111, 291.5, 111, 291.5, 109, 66.5, 67, -140.5, 50, -294.5, -50, -294.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h1bgf"]
+size = Vector2(79, 76)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b3802"]
+size = Vector2(126, 217)
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_h1bgf"]
+points = PackedVector2Array(-38, -55, -37, 37, 42, -55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_344ge"]
+size = Vector2(111, 111)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hibaj"]
+shader = ExtResource("9_hibaj")
+shader_parameter/speed = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fevyy"]
+size = Vector2(118, 472)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hibaj"]
+size = Vector2(160, 421.125)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ee4r6"]
+shader = ExtResource("9_hibaj")
+shader_parameter/speed = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pdsj5"]
+size = Vector2(108, 492.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ee4r6"]
+size = Vector2(139, 406)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pdsj5"]
+shader = ExtResource("9_hibaj")
+shader_parameter/speed = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3pmx8"]
+size = Vector2(184, 343)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gt3je"]
+size = Vector2(131, 383)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u50mg"]
+size = Vector2(17, 85)
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_21xkr"]
 points = PackedVector2Array(-64, -20.5, -64, -6.5, -14, 43.5, -8, 45.5, 9, 45.5, 64, 17.5, 64, 2.5, 19, -43.5, -24, -46.5)
@@ -56,52 +119,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6bp64"]
-size = Vector2(1152, 100)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_21xkr"]
-size = Vector2(1152, 100)
-
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_fevyy"]
-points = PackedVector2Array(-84, -84.5, -111, 61.5, -111, 291.5, 111, 291.5, 109, 66.5, 67, -140.5, 50, -294.5, -50, -294.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h1bgf"]
-size = Vector2(79, 76)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b3802"]
-size = Vector2(126, 217)
-
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_h1bgf"]
-points = PackedVector2Array(-38, -55, -37, 37, 42, -55)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_344ge"]
-size = Vector2(111, 111)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fevyy"]
-size = Vector2(118, 472)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hibaj"]
-size = Vector2(160, 421.125)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pdsj5"]
-size = Vector2(108, 492.25)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ee4r6"]
-size = Vector2(136, 404)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kry3j"]
-size = Vector2(100, 150)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8gbba"]
-size = Vector2(79, 484.5)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_fevyy"]
-size = Vector2(100, 625)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gt3je"]
-size = Vector2(100, 624)
-
-[node name="Main" type="Control"]
+[node name="Main" type="Control" unique_id=339191034]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -109,7 +127,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="EndScreen" type="VBoxContainer" parent="."]
+[node name="EndScreen" type="VBoxContainer" parent="." unique_id=1608514616]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -123,30 +141,260 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_8gbba")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="EndScreen"]
+[node name="RichTextLabel" type="RichTextLabel" parent="EndScreen" unique_id=359559853]
+clip_contents = false
 layout_mode = 2
 size_flags_vertical = 3
 bbcode_enabled = true
-text = "[center][font_size=64]You Lost!
+text = "[font_size=64]You Lost!
 [font_size=32]Cathy and Brant are not impressed.
 "
+horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="EndScreen"]
+[node name="HBoxContainer" type="HBoxContainer" parent="EndScreen" unique_id=1414648373]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.8
 
-[node name="QBtn" type="Button" parent="EndScreen/HBoxContainer"]
+[node name="QBtn" type="Button" parent="EndScreen/HBoxContainer" unique_id=64773866]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Play Again"
 
-[node name="EBtn" type="Button" parent="EndScreen/HBoxContainer"]
+[node name="EBtn" type="Button" parent="EndScreen/HBoxContainer" unique_id=1025200752]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Quit to Main Menu"
 
-[node name="PlayerRB" type="RigidBody2D" parent="."]
+[node name="Bottom Wall" type="StaticBody2D" parent="." unique_id=1471726568]
+position = Vector2(0, 648)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Bottom Wall" unique_id=425740659]
+position = Vector2(576, 50)
+shape = SubResource("RectangleShape2D_6bp64")
+debug_color = Color(0.9357072, 2.0214915e-05, 0.6373646, 0.41960785)
+
+[node name="Top Wall" type="StaticBody2D" parent="." unique_id=152890852]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Top Wall" unique_id=550630912]
+position = Vector2(576, -50)
+shape = SubResource("RectangleShape2D_21xkr")
+debug_color = Color(0.9554543, 1.4439225e-06, 0.54567516, 0.41960785)
+
+[node name="Gates" type="Node2D" parent="." unique_id=1219779504]
+script = ExtResource("6_21xkr")
+
+[node name="Sky" type="ColorRect" parent="Gates" unique_id=1540242847]
+offset_right = 1152.0
+offset_bottom = 714.0
+color = Color(0.5294118, 0.80784315, 0.92156863, 1)
+
+[node name="Grass" type="Node2D" parent="Gates" unique_id=1450943521]
+script = ExtResource("7_3pmx8")
+
+[node name="Bg1" type="Sprite2D" parent="Gates/Grass" unique_id=1597082094]
+position = Vector2(750, 464)
+texture = ExtResource("23_gt3je")
+
+[node name="Bg2" type="Sprite2D" parent="Gates/Grass" unique_id=678735634]
+position = Vector2(2250, 464)
+texture = ExtResource("23_gt3je")
+
+[node name="Clouds" type="Node2D" parent="Gates" unique_id=1642984408]
+script = ExtResource("9_ueoa1")
+
+[node name="Cloud1" type="Sprite2D" parent="Gates/Clouds" unique_id=800438908]
+position = Vector2(223.00002, 174)
+scale = Vector2(0.49029127, 0.5038168)
+texture = ExtResource("25_u50mg")
+
+[node name="Cloud3" type="Sprite2D" parent="Gates/Clouds" unique_id=1602888948]
+position = Vector2(782, 120)
+scale = Vector2(0.5770878, 0.5945946)
+texture = ExtResource("26_cbgmd")
+
+[node name="Cloud4" type="Sprite2D" parent="Gates/Clouds" unique_id=1847935142]
+position = Vector2(1187, 427)
+scale = Vector2(0.5616822, 0.716)
+texture = ExtResource("27_1w6v2")
+
+[node name="Gate1" type="Node2D" parent="Gates" unique_id=1984892102]
+position = Vector2(446, 0)
+
+[node name="Gate_1A" type="StaticBody2D" parent="Gates/Gate1" unique_id=737052763]
+position = Vector2(0, 862)
+
+[node name="Georges" type="Sprite2D" parent="Gates/Gate1/Gate_1A" unique_id=1247355056]
+position = Vector2(0, -154)
+scale = Vector2(4.91, 4.91)
+texture = ExtResource("14_jkdf5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate1/Gate_1A" unique_id=1656291088]
+position = Vector2(0, -169.5)
+shape = SubResource("ConvexPolygonShape2D_fevyy")
+
+[node name="Gate_1B" type="StaticBody2D" parent="Gates/Gate1" unique_id=1136329654]
+position = Vector2(0, 29)
+
+[node name="SU" type="Sprite2D" parent="Gates/Gate1/Gate_1B" unique_id=1882799452]
+position = Vector2(0, -56.82646)
+rotation = -3.1415925
+scale = Vector2(2.84, 4.866078)
+texture = ExtResource("8_h1bgf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate1/Gate_1B" unique_id=425656338]
+position = Vector2(-1.5, 8)
+shape = SubResource("RectangleShape2D_h1bgf")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Gates/Gate1/Gate_1B" unique_id=1722369145]
+position = Vector2(3, -142.5)
+shape = SubResource("RectangleShape2D_b3802")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Gates/Gate1/Gate_1B" unique_id=278865609]
+position = Vector2(-3, 102)
+shape = SubResource("ConvexPolygonShape2D_h1bgf")
+
+[node name="Question" type="Area2D" parent="Gates/Gate1" unique_id=1978003412]
+position = Vector2(0, 295)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate1/Question" unique_id=1730596287]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_344ge")
+
+[node name="Sprite2D" type="Sprite2D" parent="Gates/Gate1/Question" unique_id=1191591278]
+material = SubResource("ShaderMaterial_hibaj")
+position = Vector2(-0.5, -1.5000095)
+scale = Vector2(3.46875, 2.7749994)
+texture = ExtResource("10_pdsj5")
+
+[node name="Gate2" type="Node2D" parent="Gates" unique_id=838620755]
+position = Vector2(791, 0)
+
+[node name="Gate_2A" type="StaticBody2D" parent="Gates/Gate2" unique_id=630880814]
+position = Vector2(0, 862)
+
+[node name="Diamond" type="Sprite2D" parent="Gates/Gate2/Gate_2A" unique_id=1442913309]
+position = Vector2(-2, -224)
+rotation = 1.5707964
+scale = Vector2(3.1247551, 1.63)
+texture = ExtResource("9_k12tt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate2/Gate_2A" unique_id=3872349]
+position = Vector2(-2, -221)
+shape = SubResource("RectangleShape2D_fevyy")
+
+[node name="Gate_2B" type="StaticBody2D" parent="Gates/Gate2" unique_id=1676267708]
+position = Vector2(0, 29)
+
+[node name="Hicks" type="Sprite2D" parent="Gates/Gate2/Gate_2B" unique_id=533988811]
+position = Vector2(3.5807886e-06, -67.646164)
+rotation = 1.5707964
+scale = Vector2(3.82267, 2.6)
+texture = ExtResource("17_h1bgf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate2/Gate_2B" unique_id=1657996804]
+position = Vector2(21, -64.5625)
+shape = SubResource("RectangleShape2D_hibaj")
+
+[node name="Question" type="Area2D" parent="Gates/Gate2" unique_id=689289522]
+position = Vector2(0, 295)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate2/Question" unique_id=2089500387]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_344ge")
+
+[node name="Sprite2D" type="Sprite2D" parent="Gates/Gate2/Question" unique_id=1710774899]
+material = SubResource("ShaderMaterial_ee4r6")
+position = Vector2(-0.5, -0.5000057)
+scale = Vector2(3.46875, 2.7749996)
+texture = ExtResource("10_pdsj5")
+
+[node name="Gate3" type="Node2D" parent="Gates" unique_id=111449770]
+position = Vector2(1136, 0)
+
+[node name="Gate_3A" type="StaticBody2D" parent="Gates/Gate3" unique_id=1947222420]
+position = Vector2(0, 862)
+
+[node name="Arts Tower" type="Sprite2D" parent="Gates/Gate3/Gate_3A" unique_id=872668019]
+position = Vector2(0, -147.99998)
+scale = Vector2(0.305, 0.63)
+texture = ExtResource("12_b3802")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate3/Gate_3A" unique_id=468272542]
+position = Vector2(0, -148.125)
+shape = SubResource("RectangleShape2D_pdsj5")
+
+[node name="Gate_3B" type="StaticBody2D" parent="Gates/Gate3" unique_id=1928583268]
+position = Vector2(0, 29)
+
+[node name="Portobello" type="Sprite2D" parent="Gates/Gate3/Gate_3B" unique_id=517249982]
+position = Vector2(6, -63.999992)
+scale = Vector2(2.115, 3.83)
+texture = ExtResource("13_fevyy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate3/Gate_3B" unique_id=194849672]
+position = Vector2(5.5, -58)
+shape = SubResource("RectangleShape2D_ee4r6")
+
+[node name="Question" type="Area2D" parent="Gates/Gate3" unique_id=1354670785]
+position = Vector2(0, 295)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate3/Question" unique_id=653876599]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_344ge")
+
+[node name="Sprite2D" type="Sprite2D" parent="Gates/Gate3/Question" unique_id=1113179924]
+material = SubResource("ShaderMaterial_pdsj5")
+position = Vector2(-0.5, -0.5000057)
+scale = Vector2(3.46875, 2.7749996)
+texture = ExtResource("10_pdsj5")
+
+[node name="Gate4" type="Node2D" parent="Gates" unique_id=924249907]
+position = Vector2(1481, 0)
+
+[node name="Gate_4A" type="StaticBody2D" parent="Gates/Gate4" unique_id=597591600]
+position = Vector2(0, 862)
+
+[node name="Sprite2D" type="Sprite2D" parent="Gates/Gate4/Gate_4A" unique_id=971285773]
+position = Vector2(-3.0000038, -237.125)
+scale = Vector2(1.6666666, 4.103535)
+texture = ExtResource("15_pdsj5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate4/Gate_4A" unique_id=474785269]
+position = Vector2(8, -206.5)
+shape = SubResource("RectangleShape2D_3pmx8")
+
+[node name="Gate_4B" type="StaticBody2D" parent="Gates/Gate4" unique_id=1672345912]
+position = Vector2(0, 29)
+
+[node name="Sprite2D" type="Sprite2D" parent="Gates/Gate4/Gate_4B" unique_id=1994794912]
+position = Vector2(-1.9999561, -17)
+rotation = 3.1415927
+scale = Vector2(1.475, 3.23)
+texture = ExtResource("16_ee4r6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate4/Gate_4B" unique_id=433697589]
+position = Vector2(-2.5, -61.5)
+shape = SubResource("RectangleShape2D_gt3je")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Gates/Gate4/Gate_4B" unique_id=916162450]
+position = Vector2(-3.5, 153.5)
+shape = SubResource("RectangleShape2D_u50mg")
+
+[node name="Question" type="Area2D" parent="Gates/Gate4" unique_id=1692676419]
+position = Vector2(0, 295)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate4/Question" unique_id=490837796]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_344ge")
+
+[node name="Sprite2D" type="Sprite2D" parent="Gates/Gate4/Question" unique_id=1409883223]
+material = SubResource("ShaderMaterial_pdsj5")
+position = Vector2(-0.5, -0.49999428)
+scale = Vector2(3.46875, 2.775)
+texture = ExtResource("10_pdsj5")
+
+[node name="PlayerRB" type="RigidBody2D" parent="." unique_id=119751952]
 position = Vector2(115, 300)
 lock_rotation = true
 contact_monitor = true
@@ -154,201 +402,21 @@ max_contacts_reported = 2
 script = ExtResource("1_bo1nx")
 FORCE_SCALE = 300.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerRB"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerRB" unique_id=1882590431]
 position = Vector2(0, 9.5)
 shape = SubResource("ConvexPolygonShape2D_21xkr")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerRB"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerRB" unique_id=1211907918]
 sprite_frames = SubResource("SpriteFrames_kry3j")
 animation = &"fly"
 
-[node name="Area2D" type="Area2D" parent="PlayerRB"]
+[node name="Area2D" type="Area2D" parent="PlayerRB" unique_id=822248349]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerRB/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerRB/Area2D" unique_id=128204389]
 position = Vector2(0, 9.5)
 shape = SubResource("ConvexPolygonShape2D_21xkr")
 
-[node name="Bottom Wall" type="StaticBody2D" parent="."]
-position = Vector2(0, 648)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Bottom Wall"]
-position = Vector2(576, 50)
-shape = SubResource("RectangleShape2D_6bp64")
-debug_color = Color(0.9357072, 2.0214915e-05, 0.6373646, 0.41960785)
-
-[node name="Top Wall" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Top Wall"]
-position = Vector2(576, -50)
-shape = SubResource("RectangleShape2D_21xkr")
-debug_color = Color(0.9554543, 1.4439225e-06, 0.54567516, 0.41960785)
-
-[node name="Gates" type="Node2D" parent="."]
-script = ExtResource("6_21xkr")
-
-[node name="Gate1" type="Node2D" parent="Gates"]
-position = Vector2(446, 0)
-
-[node name="Gate_1A" type="StaticBody2D" parent="Gates/Gate1"]
-position = Vector2(0, 862)
-
-[node name="Georges" type="Sprite2D" parent="Gates/Gate1/Gate_1A"]
-position = Vector2(0, -154)
-scale = Vector2(4.91, 4.91)
-texture = ExtResource("14_jkdf5")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate1/Gate_1A"]
-position = Vector2(0, -169.5)
-shape = SubResource("ConvexPolygonShape2D_fevyy")
-
-[node name="Gate_1B" type="StaticBody2D" parent="Gates/Gate1"]
-position = Vector2(0, 29)
-
-[node name="SU" type="Sprite2D" parent="Gates/Gate1/Gate_1B"]
-position = Vector2(0, -56.82646)
-rotation = -3.1415925
-scale = Vector2(2.84, 4.866078)
-texture = ExtResource("8_h1bgf")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate1/Gate_1B"]
-position = Vector2(-1.5, 8)
-shape = SubResource("RectangleShape2D_h1bgf")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Gates/Gate1/Gate_1B"]
-position = Vector2(3, -142.5)
-shape = SubResource("RectangleShape2D_b3802")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Gates/Gate1/Gate_1B"]
-position = Vector2(-3, 102)
-shape = SubResource("ConvexPolygonShape2D_h1bgf")
-
-[node name="Question" type="Area2D" parent="Gates/Gate1"]
-position = Vector2(0, 295)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate1/Question"]
-position = Vector2(-0.5, -0.5)
-shape = SubResource("RectangleShape2D_344ge")
-
-[node name="Sprite2D" type="Sprite2D" parent="Gates/Gate1/Question"]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("9_b3802")
-
-[node name="Gate2" type="Node2D" parent="Gates"]
-position = Vector2(791, 0)
-
-[node name="Gate_2A" type="StaticBody2D" parent="Gates/Gate2"]
-position = Vector2(0, 862)
-
-[node name="Diamond" type="Sprite2D" parent="Gates/Gate2/Gate_2A"]
-position = Vector2(-2, -224)
-rotation = 1.5707964
-scale = Vector2(3.1247551, 1.63)
-texture = ExtResource("9_k12tt")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate2/Gate_2A"]
-position = Vector2(-2, -221)
-shape = SubResource("RectangleShape2D_fevyy")
-
-[node name="Gate_2B" type="StaticBody2D" parent="Gates/Gate2"]
-position = Vector2(0, 29)
-
-[node name="Hicks" type="Sprite2D" parent="Gates/Gate2/Gate_2B"]
-position = Vector2(3.5807886e-06, -67.646164)
-rotation = 1.5707964
-scale = Vector2(3.82267, 2.6)
-texture = ExtResource("17_h1bgf")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate2/Gate_2B"]
-position = Vector2(21, -64.5625)
-shape = SubResource("RectangleShape2D_hibaj")
-
-[node name="Question" type="Area2D" parent="Gates/Gate2"]
-position = Vector2(0, 295)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate2/Question"]
-position = Vector2(-0.5, -0.5)
-shape = SubResource("RectangleShape2D_344ge")
-
-[node name="Sprite2D" type="Sprite2D" parent="Gates/Gate2/Question"]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("9_b3802")
-
-[node name="Gate3" type="Node2D" parent="Gates"]
-position = Vector2(1136, 0)
-
-[node name="Gate_3A" type="StaticBody2D" parent="Gates/Gate3"]
-position = Vector2(0, 862)
-
-[node name="Arts Tower" type="Sprite2D" parent="Gates/Gate3/Gate_3A"]
-position = Vector2(0, -147.99998)
-scale = Vector2(0.305, 0.63)
-texture = ExtResource("12_b3802")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate3/Gate_3A"]
-position = Vector2(0, -148.125)
-shape = SubResource("RectangleShape2D_pdsj5")
-
-[node name="Gate_3B" type="StaticBody2D" parent="Gates/Gate3"]
-position = Vector2(0, 29)
-
-[node name="Portobello" type="Sprite2D" parent="Gates/Gate3/Gate_3B"]
-position = Vector2(6, -63.999992)
-scale = Vector2(2.115, 3.83)
-texture = ExtResource("13_fevyy")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate3/Gate_3B"]
-position = Vector2(7, -59)
-shape = SubResource("RectangleShape2D_ee4r6")
-
-[node name="Question" type="Area2D" parent="Gates/Gate3"]
-position = Vector2(0, 295)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate3/Question"]
-position = Vector2(-0.5, -0.5)
-shape = SubResource("RectangleShape2D_344ge")
-
-[node name="Sprite2D" type="Sprite2D" parent="Gates/Gate3/Question"]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("9_b3802")
-
-[node name="Gate4" type="Node2D" parent="Gates"]
-position = Vector2(1481, 0)
-
-[node name="Gate_4A" type="StaticBody2D" parent="Gates/Gate4"]
-position = Vector2(0, 862)
-
-[node name="Sprite2D" type="Sprite2D" parent="Gates/Gate4/Gate_4A"]
-position = Vector2(0, -148)
-scale = Vector2(1, 4.16)
-texture = SubResource("PlaceholderTexture2D_kry3j")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate4/Gate_4A"]
-position = Vector2(0, -148)
-shape = SubResource("RectangleShape2D_8gbba")
-
-[node name="Gate_4B" type="StaticBody2D" parent="Gates/Gate4"]
-position = Vector2(0, 29)
-
-[node name="Sprite2D" type="Sprite2D" parent="Gates/Gate4/Gate_4B"]
-position = Vector2(0, -147.99998)
-texture = SubResource("PlaceholderTexture2D_fevyy")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate4/Gate_4B"]
-position = Vector2(0, -148)
-shape = SubResource("RectangleShape2D_gt3je")
-
-[node name="Question" type="Area2D" parent="Gates/Gate4"]
-position = Vector2(0, 295)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate4/Question"]
-position = Vector2(-0.5, -0.5)
-shape = SubResource("RectangleShape2D_344ge")
-
-[node name="Sprite2D" type="Sprite2D" parent="Gates/Gate4/Question"]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("9_b3802")
-
-[node name="QWindow" type="Window" parent="."]
+[node name="QWindow" type="Window" parent="." unique_id=171660265]
 process_mode = 2
 oversampling_override = 1.0
 initial_position = 1
@@ -358,7 +426,7 @@ unresizable = true
 borderless = true
 script = ExtResource("8_344ge")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="QWindow"]
+[node name="VBoxContainer" type="VBoxContainer" parent="QWindow" unique_id=1273943903]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -367,7 +435,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="PromptLabel" type="Label" parent="QWindow/VBoxContainer"]
+[node name="PromptLabel" type="Label" parent="QWindow/VBoxContainer" unique_id=396690299]
 custom_minimum_size = Vector2(500, 200)
 layout_mode = 2
 size_flags_vertical = 3
@@ -377,59 +445,59 @@ What is the unit of gravity?"
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="Options" type="HBoxContainer" parent="QWindow/VBoxContainer"]
+[node name="Options" type="HBoxContainer" parent="QWindow/VBoxContainer" unique_id=259033292]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Numerical" type="LineEdit" parent="QWindow/VBoxContainer/Options"]
+[node name="Numerical" type="LineEdit" parent="QWindow/VBoxContainer/Options" unique_id=967013007]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 script = ExtResource("9_ynf5e")
 
-[node name="Option1" type="Button" parent="QWindow/VBoxContainer/Options"]
+[node name="Option1" type="Button" parent="QWindow/VBoxContainer/Options" unique_id=1594962350]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Option 1"
 
-[node name="Option2" type="Button" parent="QWindow/VBoxContainer/Options"]
+[node name="Option2" type="Button" parent="QWindow/VBoxContainer/Options" unique_id=1081214768]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Option 2"
 
-[node name="Option3" type="Button" parent="QWindow/VBoxContainer/Options"]
+[node name="Option3" type="Button" parent="QWindow/VBoxContainer/Options" unique_id=212716972]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Option 3"
 
-[node name="Option4" type="Button" parent="QWindow/VBoxContainer/Options"]
+[node name="Option4" type="Button" parent="QWindow/VBoxContainer/Options" unique_id=658825640]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Option 4"
 
-[node name="CorrectAnswer" type="AudioStreamPlayer" parent="."]
+[node name="CorrectAnswer" type="AudioStreamPlayer" parent="." unique_id=62586841]
 process_mode = 3
 stream = ExtResource("10_hptm8")
 bus = &"SFX"
 
-[node name="Music" type="AudioStreamPlayer" parent="."]
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1396888169]
 process_mode = 3
 stream = ExtResource("11_6iyac")
 autoplay = true
 bus = &"Music"
 parameters/looping = true
 
-[node name="Dead" type="AudioStreamPlayer" parent="."]
+[node name="Dead" type="AudioStreamPlayer" parent="." unique_id=27748646]
 process_mode = 3
 stream = ExtResource("11_d1ilt")
 bus = &"SFX"
 
-[node name="Score" type="Label" parent="."]
+[node name="Score" type="Label" parent="." unique_id=551329850]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0

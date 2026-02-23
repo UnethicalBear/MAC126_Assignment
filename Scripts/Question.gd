@@ -9,7 +9,7 @@ var type: String
 func _init(Category: String, Prompt: String, Type: String, Options: PackedStringArray, Answer: String) -> void:
 	category=Category
 	options=Options
-	answer=Answer
+	answer=Answer.to_lower()
 	question=Prompt
 	type=Type
 

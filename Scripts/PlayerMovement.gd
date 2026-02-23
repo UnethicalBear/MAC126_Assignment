@@ -23,11 +23,11 @@ func _ready() -> void:
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("JUMP"):
+		Achievements.FlapCounterUp()
 		linear_velocity.y = - FORCE_SCALE
 
 		if AnimatedSprite.animation != "fly":
 			AnimatedSprite.play("fly")
-
 
 func _physics_process(delta: float) -> void:
 	if linear_velocity.y > 0:
@@ -42,7 +42,10 @@ func _physics_process(delta: float) -> void:
 
 #region GAME LOGIC
 
-func _collide(_discard: Variant) -> void:
+func _collide(obj: Variant) -> void:
+	if obj is not int and "Gate" in obj.name:
+		Achievements.CrashedInto(obj.name)
+	
 	$"../Dead".play()
 	set_deferred("freeze", true)
 	sleeping = true
