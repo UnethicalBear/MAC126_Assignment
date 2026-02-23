@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://caifqydr24h2p"]
+
+[ext_resource type="Script" uid="uid://bvgvexirwksw6" path="res://Scripts/AchLoader.gd" id="1_7xtne"]
+
+[node name="Achievements" type="VBoxContainer" unique_id=142304082]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_7xtne")
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=2096385481]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[font_size=64][center]Achievements
+[font_size=20]
+First to complete all of these wins a prize (note they do not save between sessions)"
+fit_content = true
+
+[node name="A0" type="RichTextLabel" parent="." unique_id=1957902360]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+bbcode_enabled = true
+text = "Crash into each building at least once: "
+fit_content = true
+
+[node name="A1" type="RichTextLabel" parent="." unique_id=165179341]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+bbcode_enabled = true
+text = "Score 10 points in a single attempt [REWARD AVAILABLE]: "
+fit_content = true
+
+[node name="A2" type="RichTextLabel" parent="." unique_id=1275659944]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+bbcode_enabled = true
+text = "Flap 250 times: "
+fit_content = true
+
+[node name="A3" type="RichTextLabel" parent="." unique_id=1162710317]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+bbcode_enabled = true
+text = "Answer 20 questions correctly: "
+fit_content = true
+
+[node name="Label" type="Label" parent="." unique_id=1171443430]
+visible = false
+layout_mode = 2
+size_flags_vertical = 6
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=766284012]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Return to Main Menu"

@@ -4,6 +4,7 @@ var score: int = 0
 
 func incrementScore() -> void:
 	score+=1
+	Achievements.PostScore(score)
 	UpdateScore()
 
 func UpdateScore() -> void:

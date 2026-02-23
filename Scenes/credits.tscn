@@ -1,28 +1,62 @@
-[gd_scene load_steps=2 format=3 uid="uid://bu61rrtw1jgsw"]
+[gd_scene format=3 uid="uid://bu61rrtw1jgsw"]
 
+[ext_resource type="Script" uid="uid://c1dr6oltfcbma" path="res://Scripts/Credits.gd" id="1_gryuy"]
 [ext_resource type="VideoStream" uid="uid://cfn6ltsqis2mj" path="res://Assets/vid.ogv" id="1_nm7lk"]
 
-[node name="Root" type="HBoxContainer"]
+[node name="Credits" type="HBoxContainer" unique_id=294469952]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_gryuy")
 
-[node name="Credits" type="RichTextLabel" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1938806691]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="Credits" type="RichTextLabel" parent="VBoxContainer" unique_id=31776617]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 bbcode_enabled = true
 text = "[font_size=64][center]Credits
-[font_size=24][left]Programming: Leon Shaw
-Art & Design:
-Questions & Content:
-Excellent Dancing: Dr Jonathan Davidson
-[i](courtesey of Alex)[/i]
-
+[hr]
+[font_size=24][left]
+Leon Shaw: Programming & Art
+Josh Smith: Question Content & Art
+Alex Wakefield: Question Content & Art
+Thomas ____: 
+Samuel Russel: Question Content & Art
 "
 
-[node name="Video" type="VideoStreamPlayer" parent="."]
+[node name="Credits2" type="RichTextLabel" parent="VBoxContainer" unique_id=3658693]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[font_size=64][center]Credits
+[font_size=24][left]
+
+Leon Shaw: Programming & Art
+Josh Smith: Question Content & Art
+Alex Wakefield: Question Content & Art
+Thomas ____: 
+Samuel Russel: Question Content & Art
+[hr]
+Excellent Dancing: Dr Jonathan Davidson
+[i](courtesey of Alex)[/i]
+"
+
+[node name="QuitBtn" type="Button" parent="VBoxContainer" unique_id=717740833]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+text = "Quit to Main Menu"
+
+[node name="Video" type="VideoStreamPlayer" parent="." unique_id=1573732414]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 audio_track = 1
@@ -31,3 +65,13 @@ volume_db = -80.0
 autoplay = true
 expand = true
 loop = true
+
+[node name="LockedMsg" type="RichTextLabel" parent="." unique_id=1359681058]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+bbcode_enabled = true
+text = "[font_size=48][center]Content locked!
+
+Keep playing to see what's waiting behind this text..."
+vertical_alignment = 1
