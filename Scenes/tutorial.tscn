@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://di4t5ji3d65oo"]
+
+[ext_resource type="Script" uid="uid://bsiocqs02wuyt" path="res://Scripts/returntomain.gd" id="1_ka2pi"]
+
+[node name="Control" type="Control" unique_id=2083282926]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BG" type="ColorRect" parent="." unique_id=905789383]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Root" type="VBoxContainer" parent="." unique_id=1212210313]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Content" type="RichTextLabel" parent="Root" unique_id=306852765]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[center][font_size=64]Thermo-Bird
+
+[font_size=15]Thermo-Bird is a flappy bird clone for learning how to use the Little Book of Thermofluids!
+
+
+Press [color=red][space][/color] or [color=red]left-click[/color] to jump
+
+
+Pick a level to focus on a particular topic, or everything to get completely random questions!
+
+
+Keep flying through the gates and answering questions correctly to score points!
+
+
+[color=red]ALL questions can be answered using the LBOTF, even if you aren't familiar with the content itself[/color] - the idea is to get you to use the book to solve the question. There's no timer on the questions so there's never a rush to solve them.
+
+
+[color=red]Look out for the achivements screen[/color] - you may get some rewards for being a master Thermo-Bird player...
+
+
+[color=red][b]Good luck![/b][/color]"
+vertical_alignment = 1
+
+[node name="ReturnBtn" type="Button" parent="Root" unique_id=1733058464]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+theme_override_font_sizes/font_size = 12
+text = "Return to Main Menu"
+script = ExtResource("1_ka2pi")

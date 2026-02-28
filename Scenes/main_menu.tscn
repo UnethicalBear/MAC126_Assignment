@@ -1,84 +1,145 @@
-[gd_scene load_steps=2 format=3 uid="uid://dgbi2wbluci82"]
+[gd_scene format=3 uid="uid://dgbi2wbluci82"]
 
 [ext_resource type="Script" uid="uid://d2wartoq02p54" path="res://Scripts/MainMenu.gd" id="1_28flt"]
 
-[node name="Root" type="VBoxContainer"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28flt"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 0.18039216, 0.53333336, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="Control" type="Control" unique_id=2083282926]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BG" type="ColorRect" parent="." unique_id=905789383]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Root" type="VBoxContainer" parent="." unique_id=1212210313]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_28flt")
 
-[node name="Title" type="RichTextLabel" parent="."]
+[node name="Title" type="RichTextLabel" parent="Root" unique_id=306852765]
 layout_mode = 2
 size_flags_vertical = 3
 bbcode_enabled = true
-text = "[center][font_size=64]Thermo-Bird"
+text = "[center][font_size=64]Thermo-Bird
+[font_size=22]Choose a level to begin!"
+vertical_alignment = 1
 
-[node name="LevelContainer" type="GridContainer" parent="."]
+[node name="LevelContainer" type="GridContainer" parent="Root" unique_id=1911571007]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 3.12
 columns = 4
 
-[node name="Level1" type="Button" parent="LevelContainer"]
+[node name="Level1" type="Button" parent="Root/LevelContainer" unique_id=1033095967]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Level 1:
-Nomenclature"
+theme_override_colors/font_color = Color(1, 0.84705883, 0.3019608, 1)
+theme_override_colors/font_hover_color = Color(1, 0.62352943, 0.10980392, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_28flt")
+text = "Nomenclature"
 
-[node name="Level2" type="Button" parent="LevelContainer"]
+[node name="Level2" type="Button" parent="Root/LevelContainer" unique_id=1910334383]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Level 2:
-Fundamentals of Thermofluids"
+theme_override_colors/font_color = Color(1, 0.84705883, 0.3019608, 1)
+theme_override_colors/font_hover_color = Color(1, 0.62352943, 0.10980392, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_28flt")
+text = "Fundamentals of Thermofluids"
 
-[node name="Level3" type="Button" parent="LevelContainer"]
+[node name="Level3" type="Button" parent="Root/LevelContainer" unique_id=1770636806]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Level 3:
-Thermodynamic Properties"
+theme_override_colors/font_color = Color(1, 0.84705883, 0.3019608, 1)
+theme_override_colors/font_hover_color = Color(1, 0.62352943, 0.10980392, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_28flt")
+text = "Thermodynamic Properties"
 
-[node name="Level4" type="Button" parent="LevelContainer"]
+[node name="Level4" type="Button" parent="Root/LevelContainer" unique_id=1567294450]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Level 4:
-Specific Heat, Enthalpy & Entropy"
+theme_override_colors/font_color = Color(1, 0.84705883, 0.3019608, 1)
+theme_override_colors/font_hover_color = Color(1, 0.62352943, 0.10980392, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_28flt")
+text = "Specific Heat, Enthalpy
+ & Entropy"
 
-[node name="Level5" type="Button" parent="LevelContainer"]
+[node name="Level5" type="Button" parent="Root/LevelContainer" unique_id=217977563]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Level 5:
-Steam"
+theme_override_colors/font_color = Color(1, 0.84705883, 0.3019608, 1)
+theme_override_colors/font_hover_color = Color(1, 0.62352943, 0.10980392, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_28flt")
+text = "Steam"
 
-[node name="Level6" type="Button" parent="LevelContainer"]
+[node name="Level6" type="Button" parent="Root/LevelContainer" unique_id=48661590]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Level 6:
-Thermodynamic Properties"
+theme_override_colors/font_color = Color(1, 0.84705883, 0.3019608, 1)
+theme_override_colors/font_hover_color = Color(1, 0.62352943, 0.10980392, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_28flt")
+text = "Thermodynamic Properties"
 
-[node name="Level7" type="Button" parent="LevelContainer"]
+[node name="Level7" type="Button" parent="Root/LevelContainer" unique_id=1157211282]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Level 7:
-Vapour Mixtures"
+theme_override_colors/font_color = Color(1, 0.84705883, 0.3019608, 1)
+theme_override_colors/font_hover_color = Color(1, 0.62352943, 0.10980392, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_28flt")
+text = "Vapour Mixtures"
 
-[node name="Level8" type="Button" parent="LevelContainer"]
+[node name="Level8" type="Button" parent="Root/LevelContainer" unique_id=325233628]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Level 8:
-Conversion Factors"
+theme_override_colors/font_color = Color(1, 0.84705883, 0.3019608, 1)
+theme_override_colors/font_hover_color = Color(1, 0.62352943, 0.10980392, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_28flt")
+text = "Conversion Factors"
 
-[node name="DISABLED1" type="Button" parent="LevelContainer"]
+[node name="DISABLED1" type="Button" parent="Root/LevelContainer" unique_id=926001603]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 light_mask = 0
@@ -90,21 +151,27 @@ theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 disabled = true
 
-[node name="Level9" type="Button" parent="LevelContainer"]
+[node name="Level9" type="Button" parent="Root/LevelContainer" unique_id=1470326292]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Level 9:
-Additional General Info"
+theme_override_colors/font_color = Color(1, 0.84705883, 0.3019608, 1)
+theme_override_colors/font_hover_color = Color(1, 0.62352943, 0.10980392, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_28flt")
+text = "Additional General Info"
 
-[node name="Level10" type="Button" parent="LevelContainer"]
+[node name="Level10" type="Button" parent="Root/LevelContainer" unique_id=47190274]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Level 10:
-Everything!"
+theme_override_colors/font_color = Color(1, 0.84705883, 0.3019608, 1)
+theme_override_colors/font_hover_color = Color(1, 0.62352943, 0.10980392, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_28flt")
+text = "Everything!"
 
-[node name="DISABLED" type="Button" parent="LevelContainer"]
+[node name="DISABLED" type="Button" parent="Root/LevelContainer" unique_id=609678820]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 light_mask = 0
@@ -116,34 +183,62 @@ theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 disabled = true
 
-[node name="SettingsContainer" type="HBoxContainer" parent="."]
+[node name="SettingsContainer" type="HBoxContainer" parent="Root" unique_id=1720242369]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.41
 
-[node name="MusicBtn" type="Button" parent="SettingsContainer"]
+[node name="MusicBtn" type="Button" parent="Root/SettingsContainer" unique_id=1733058464]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.4
+theme_override_font_sizes/font_size = 12
 text = "Mute Music"
 
-[node name="SFXBtn" type="Button" parent="SettingsContainer"]
+[node name="SFXBtn" type="Button" parent="Root/SettingsContainer" unique_id=381468023]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.4
+theme_override_font_sizes/font_size = 12
 text = "Mute SFX"
 
-[node name="DifficultyBtn" type="Button" parent="SettingsContainer"]
+[node name="DifficultyBtn" type="Button" parent="Root/SettingsContainer" unique_id=1476559905]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.6
+theme_override_font_sizes/font_size = 12
 text = "Difficulty: Easy"
 
-[node name="InstructionsBtn" type="Button" parent="SettingsContainer"]
+[node name="InstructionsBtn" type="Button" parent="Root/SettingsContainer" unique_id=429845054]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.55
+theme_override_font_sizes/font_size = 12
 text = "How to Play"
 
-[node name="CreditsBtn" type="Button" parent="SettingsContainer"]
+[node name="AchievementsBtn" type="Button" parent="Root/SettingsContainer" unique_id=807043743]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 12
+
+[node name="text" type="RichTextLabel" parent="Root/SettingsContainer/AchievementsBtn" unique_id=157257353]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[font_size=12]Achievements"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CreditsBtn" type="Button" parent="Root/SettingsContainer" unique_id=1587601418]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_font_sizes/font_size = 12
 text = "Credits"

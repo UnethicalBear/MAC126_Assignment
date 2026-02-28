@@ -127,41 +127,45 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="EndScreen" type="VBoxContainer" parent="." unique_id=1608514616]
+[node name="EndScreen" type="Window" parent="." unique_id=1224894810]
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(1108, 373)
 visible = false
-layout_mode = 1
+unresizable = true
+borderless = true
+
+[node name="EndScreen" type="VBoxContainer" parent="EndScreen" unique_id=1608514616]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -352.0
-offset_bottom = -298.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_8gbba")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="EndScreen" unique_id=359559853]
+[node name="RichTextLabel" type="RichTextLabel" parent="EndScreen/EndScreen" unique_id=359559853]
 clip_contents = false
 layout_mode = 2
 size_flags_vertical = 3
 bbcode_enabled = true
-text = "[font_size=64]You Lost!
-[font_size=32]Cathy and Brant are not impressed.
+text = "[font_size=64][color=red]You Lost![/color]
+[font_size=32][br]Cathy and Brant are not impressed.
 "
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="EndScreen" unique_id=1414648373]
+[node name="HBoxContainer" type="HBoxContainer" parent="EndScreen/EndScreen" unique_id=1414648373]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.8
 
-[node name="QBtn" type="Button" parent="EndScreen/HBoxContainer" unique_id=64773866]
+[node name="QBtn" type="Button" parent="EndScreen/EndScreen/HBoxContainer" unique_id=64773866]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Play Again"
 
-[node name="EBtn" type="Button" parent="EndScreen/HBoxContainer" unique_id=1025200752]
+[node name="EBtn" type="Button" parent="EndScreen/EndScreen/HBoxContainer" unique_id=1025200752]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Quit to Main Menu"
@@ -420,11 +424,22 @@ shape = SubResource("ConvexPolygonShape2D_21xkr")
 process_mode = 2
 oversampling_override = 1.0
 initial_position = 1
-size = Vector2i(500, 500)
+size = Vector2i(850, 500)
 visible = false
 unresizable = true
 borderless = true
 script = ExtResource("8_344ge")
+
+[node name="Sky" type="ColorRect" parent="QWindow" unique_id=1237590210]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="QWindow" unique_id=1273943903]
 anchors_preset = 15
@@ -439,7 +454,7 @@ size_flags_vertical = 3
 custom_minimum_size = Vector2(500, 200)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 25
 text = "
 What is the unit of gravity?"
 horizontal_alignment = 1
@@ -460,24 +475,28 @@ script = ExtResource("9_ynf5e")
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 12
 text = "Option 1"
 
 [node name="Option2" type="Button" parent="QWindow/VBoxContainer/Options" unique_id=1081214768]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 12
 text = "Option 2"
 
 [node name="Option3" type="Button" parent="QWindow/VBoxContainer/Options" unique_id=212716972]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 12
 text = "Option 3"
 
 [node name="Option4" type="Button" parent="QWindow/VBoxContainer/Options" unique_id=658825640]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 12
 text = "Option 4"
 
 [node name="CorrectAnswer" type="AudioStreamPlayer" parent="." unique_id=62586841]

@@ -29,6 +29,10 @@ Achievements="*uid://c0m45velhafub"
 
 window/stretch/mode="canvas_items"
 
+[gui]
+
+theme/custom_font="uid://daqdea1etrb1e"
+
 [input]
 
 JUMP={
@@ -42,3 +46,7 @@ PLAY_HIDDEN={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":true,"shift_pressed":true,"ctrl_pressed":true,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":70,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
