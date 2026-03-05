@@ -259,7 +259,7 @@ position = Vector2(-3, 102)
 shape = SubResource("ConvexPolygonShape2D_h1bgf")
 
 [node name="Question" type="Area2D" parent="Gates/Gate1" unique_id=1978003412]
-position = Vector2(0, 295)
+position = Vector2(124, 295)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate1/Question" unique_id=1730596287]
 position = Vector2(-0.5, -0.5)
@@ -272,7 +272,7 @@ scale = Vector2(3.46875, 2.7749994)
 texture = ExtResource("10_pdsj5")
 
 [node name="Gate2" type="Node2D" parent="Gates" unique_id=838620755]
-position = Vector2(791, 0)
+position = Vector2(896, 0)
 
 [node name="Gate_2A" type="StaticBody2D" parent="Gates/Gate2" unique_id=630880814]
 position = Vector2(0, 862)
@@ -301,7 +301,7 @@ position = Vector2(21, -64.5625)
 shape = SubResource("RectangleShape2D_hibaj")
 
 [node name="Question" type="Area2D" parent="Gates/Gate2" unique_id=689289522]
-position = Vector2(0, 295)
+position = Vector2(124, 295)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate2/Question" unique_id=2089500387]
 position = Vector2(-0.5, -0.5)
@@ -314,7 +314,7 @@ scale = Vector2(3.46875, 2.7749996)
 texture = ExtResource("10_pdsj5")
 
 [node name="Gate3" type="Node2D" parent="Gates" unique_id=111449770]
-position = Vector2(1136, 0)
+position = Vector2(1286, 0)
 
 [node name="Gate_3A" type="StaticBody2D" parent="Gates/Gate3" unique_id=1947222420]
 position = Vector2(0, 862)
@@ -341,7 +341,7 @@ position = Vector2(5.5, -58)
 shape = SubResource("RectangleShape2D_ee4r6")
 
 [node name="Question" type="Area2D" parent="Gates/Gate3" unique_id=1354670785]
-position = Vector2(0, 295)
+position = Vector2(124, 295)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate3/Question" unique_id=653876599]
 position = Vector2(-0.5, -0.5)
@@ -354,7 +354,7 @@ scale = Vector2(3.46875, 2.7749996)
 texture = ExtResource("10_pdsj5")
 
 [node name="Gate4" type="Node2D" parent="Gates" unique_id=924249907]
-position = Vector2(1481, 0)
+position = Vector2(1731, 0)
 
 [node name="Gate_4A" type="StaticBody2D" parent="Gates/Gate4" unique_id=597591600]
 position = Vector2(0, 862)
@@ -386,7 +386,7 @@ position = Vector2(-3.5, 153.5)
 shape = SubResource("RectangleShape2D_u50mg")
 
 [node name="Question" type="Area2D" parent="Gates/Gate4" unique_id=1692676419]
-position = Vector2(0, 295)
+position = Vector2(124, 295)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate4/Question" unique_id=490837796]
 position = Vector2(-0.5, -0.5)
@@ -477,6 +477,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 12
 text = "Option 1"
+autowrap_mode = 2
 
 [node name="Option2" type="Button" parent="QWindow/VBoxContainer/Options" unique_id=1081214768]
 visible = false
@@ -484,6 +485,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 12
 text = "Option 2"
+autowrap_mode = 2
 
 [node name="Option3" type="Button" parent="QWindow/VBoxContainer/Options" unique_id=212716972]
 visible = false
@@ -491,6 +493,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 12
 text = "Option 3"
+autowrap_mode = 2
 
 [node name="Option4" type="Button" parent="QWindow/VBoxContainer/Options" unique_id=658825640]
 visible = false
@@ -498,6 +501,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 12
 text = "Option 4"
+autowrap_mode = 2
 
 [node name="CorrectAnswer" type="AudioStreamPlayer" parent="." unique_id=62586841]
 process_mode = 3

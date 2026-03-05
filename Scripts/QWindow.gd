@@ -44,7 +44,7 @@ func NumAnswered(_discard: String) -> void:
 func Answered(id: int) -> void:
 	var got: String
 	if id < 5:
-		got = find_child("Option"+str(id)).text
+		got = find_child("Option"+str(id)).text.to_lower()
 	else:
 		got = find_child("Numerical").text
 
@@ -61,6 +61,7 @@ func Answered(id: int) -> void:
 		get_tree().paused=false
 	else:
 		hide()
+		$"../PlayerRB".correctAnswer = answer
 		$"..".show()
 		$"../PlayerRB"._collide(0)
 		get_tree().paused=false

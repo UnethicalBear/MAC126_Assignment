@@ -6,7 +6,6 @@ func UpdateAch(aID: int) -> void:
 	var textObj: RichTextLabel = find_child("A"+str(aID))
 	
 	if progress > 99.5:
-		print("adding")
 		textObj.text += "[rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]COMPLETE!"
 		
 		if aID == 1:
@@ -35,3 +34,5 @@ func _ready() -> void:
 		$A2.hide()
 		$A3.hide()
 	
+	if Achievements.AchievementPrompt:
+		Achievements.AchievementPrompt = false

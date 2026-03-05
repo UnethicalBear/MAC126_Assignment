@@ -26,7 +26,7 @@ text = "[br][font_size=64][center]Credits
 [color=red]Leon Shaw[/color]: Programming, Question Editing & Art[br]
 [color=red]Josh Smith[/color]: Question Content & Art[br]
 [color=red]Alex Wakefield[/color]: Question Content & Art[br]
-[color=red]Thomas ____[/color]: [br]
+[color=red]Thomas Jeppesen[/color]: Question Content & Branding[br]
 [color=red]Samuel Russel[/color]: Question Content & Art
 "
 
@@ -36,16 +36,16 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 bbcode_enabled = true
-text = "[font_size=64][center]Credits
-[font_size=24][left]
-
-Leon Shaw: Programming & Art
-Josh Smith: Question Content & Art
-Alex Wakefield: Question Content & Art
-Thomas ____: 
-Samuel Russel: Question Content & Art
+text = "[br][font_size=64][center]Credits
 [hr]
-Excellent Dancing: Dr Jonathan Davidson
+[font_size=16][left]
+[color=red]Leon Shaw[/color]: Programming, Question Editing & Art[br]
+[color=red]Josh Smith[/color]: Question Content & Art[br]
+[color=red]Alex Wakefield[/color]: Question Content & Art[br]
+[color=red]Thomas Jeppesen[/color]: Question Content & Branding[br]
+[color=red]Samuel Russel[/color]: Question Content & Art
+[hr]
+Excellent Dancing: [color=red]Dr Jonathan Davidson[/color]
 [i](courtesey of Alex)[/i]
 "
 
@@ -71,7 +71,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 bbcode_enabled = true
-text = "[font_size=48][center]Content locked!
+text = "[font_size=32][center]Content locked!
 
 Keep playing to see what's waiting behind this text..."
 vertical_alignment = 1

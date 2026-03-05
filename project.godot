@@ -17,7 +17,8 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 config/name="Thermo"
 run/main_scene="uid://dgbi2wbluci82"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="uid://1cc6t8swhj37"
+boot_splash/image="uid://bbm1ju3gmwwo7"
+config/icon="uid://bbm1ju3gmwwo7"
 
 [autoload]
 

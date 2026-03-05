@@ -1,12 +1,14 @@
 extends RigidBody2D
 
-@onready var EndScreen: VBoxContainer = $"../EndScreen"
+@onready var EndScreen: Window = $"../EndScreen"
 @onready var AnimatedSprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var GateHandler: Node2D = $"../Gates"
 @onready var QWindow: Window = $"../QWindow"
 
 @export var FORCE_SCALE: float = 600
 var SCREEN_SIZE: Vector2
+
+var correctAnswer: String = ""
 
 var fallTime: float = 0 
 const idleFallLimit: float = 0.35
@@ -46,12 +48,15 @@ func _collide(obj: Variant) -> void:
 	if obj is not int and "Gate" in obj.name:
 		Achievements.CrashedInto(obj.name)
 	
+	if correctAnswer:
+		$"../EndScreen/EndScreen/RichTextLabel".text += ("[br][br][color=red][font_size=20]The correct answer was: " + correctAnswer) 
+		
 	$"../Dead".play()
 	set_deferred("freeze", true)
 	sleeping = true
 	gravity_scale = 0
 	global_position.y = SCREEN_SIZE.y * 0.1
-	EndScreen.show()
+	EndScreen.popup_centered()
 	hide()
 	$Area2D.set_deferred("monitorable", false)
 	$Area2D.monitoring = false

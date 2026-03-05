@@ -1,7 +1,7 @@
 extends HBoxContainer
 
 func _ready() -> void:
-	if Achievements.AchievementProgess[1]:
+	if Achievements.check(Achievements.AchievementProgess[1]):
 		$VBoxContainer/Credits.hide()
 		$VBoxContainer/Credits2.show()
 		
