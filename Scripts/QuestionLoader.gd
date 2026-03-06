@@ -144,9 +144,14 @@ General;Google maps says it's 1.5 miles to the Diamond from the Edge (endcliffe)
 General;What is the stephan bolzman constant in nW/m^2k^4 (5sf);NUMERICAL;;;;;56.704;Samuel;1"""
 
 var ALL: Array[Question]
+var LIVE: Array[Question]
+
 var ALL_DICT: Dictionary
+var LIVE_DICT: Dictionary
 
 var tmp: Question
+
+var RNG: RandomNumberGenerator = RandomNumberGenerator.new()
 
 func _ready() -> void:
 	# load in the questions	
@@ -159,13 +164,33 @@ func _ready() -> void:
 			ALL_DICT[data[0]].append(tmp)
 		else:
 			ALL_DICT[data[0]] = [tmp]
-		
+	
+	LIVE = ALL.duplicate(true)
+	LIVE_DICT = ALL_DICT.duplicate(true)
+
+
+var index: int
+var toReturn: Question
 func GetQuestion(category: String = "") -> Question:
 	# if cateogry is empty; assign a random question
 	if category == "":
-		return ALL.pick_random()
+		index = RNG.randi_range(0, len(ALL))
+		toReturn = LIVE[index]
+		LIVE.remove_at(index)
+		
+		if len(LIVE) == 0:
+			LIVE = ALL.duplicate(true)
+			LIVE.shuffle()
+		return toReturn
 	
 	# else get the dictionary to find by category
 	else:
-		return ALL_DICT[category].pick_random()
-	
+		index = RNG.randi_range(0, len(LIVE_DICT[category])-1 )
+		toReturn = LIVE_DICT[category][index]
+		LIVE_DICT[category].remove_at(index)
+		
+		if len(LIVE_DICT[category]) == 0:
+			LIVE_DICT[category] = ALL_DICT[category].duplicate(true)
+			LIVE_DICT[category].shuffle()
+		
+		return toReturn

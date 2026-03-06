@@ -117,7 +117,7 @@ theme_override_colors/font_color = Color(1, 0.84705883, 0.3019608, 1)
 theme_override_colors/font_hover_color = Color(1, 0.62352943, 0.10980392, 1)
 theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxFlat_28flt")
-text = "Thermodynamic Properties"
+text = "Additional Thermodynamics"
 
 [node name="Level7" type="Button" parent="Root/LevelContainer" unique_id=1157211282]
 layout_mode = 2
