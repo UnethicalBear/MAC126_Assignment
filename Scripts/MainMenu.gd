@@ -11,24 +11,21 @@ var LevelDict: Dictionary = {
 	"Level9":"General",
 	"Level10":""   
 }
-var DifficultyMode: int = 0 # 0 = easy, 1 = medium, 2 = hard
 var DifficultyData: Dictionary =  {
-	0: ["Easy", 150, 0.75, 2],		#100
-	1: ["Medium", 175, 0.66, 1.333],
-	2: ["Hard", 250, 0.5, 0.8],
+	0: ["Easy", 150, 0.85, 2],
+	1: ["Medium", 175, 0.75, 1.333],
+	2: ["Hard", 250, 0.65, 0.8],
 }
 
 func _ready() -> void:
 	$SettingsContainer/CreditsBtn.pressed.connect(OpenCredits)
 	$SettingsContainer/AchievementsBtn.pressed.connect(get_tree().change_scene_to_file.bind("res://Scenes/achievements.tscn"))
 	$SettingsContainer/InstructionsBtn.pressed.connect(get_tree().change_scene_to_file.bind("res://Scenes/tutorial.tscn"))
-	
-	ChangeDifficultyMode()
 
 	for child: Button in $LevelContainer.get_children():
 		child.pressed.connect(LoadLevel.bind(child.name))
 
-	$SettingsContainer/DifficultyBtn.pressed.connect(ChangeDifficultyMode)
+	$SettingsContainer/DifficultyBtn.pressed.connect(ChangeLevelDifficulty)
 	$SettingsContainer/SFXBtn.pressed.connect(MuteSFX)
 	$SettingsContainer/MusicBtn.pressed.connect(MuteMusic)
 	
@@ -41,6 +38,8 @@ func _ready() -> void:
 	if Globals.MusicMuted:
 		MuteMusic()
 		MuteMusic()
+
+	UpdateLevelDifficulty()
 		
 	if Achievements.AchievementPrompt:
 		$SettingsContainer/AchievementsBtn/text.text = "[rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0][NEW] Achievements"
@@ -54,15 +53,18 @@ func _input(event: InputEvent) -> void:
 		Globals.Q_CHANCE = 0
 		get_tree().change_scene_to_file("res://Scenes/main.tscn")
 
-func ChangeDifficultyMode() -> void:
-	DifficultyMode += 1
-	if DifficultyMode == 3:
-		DifficultyMode = 0
+func ChangeLevelDifficulty() -> void:
+	Globals.LevelDifficulty += 1
+	if Globals.LevelDifficulty == 3:
+		Globals.LevelDifficulty = 0
 	
-	$SettingsContainer/DifficultyBtn.text = "Difficulty: " + DifficultyData[DifficultyMode][0]
-	Globals.GATE_SPEED = DifficultyData[DifficultyMode][1]
-	Globals.Q_CHANCE = DifficultyData[DifficultyMode][2]
-	Globals.GATE_PUSH_FWD = DifficultyData[DifficultyMode][3]
+	UpdateLevelDifficulty()
+
+func UpdateLevelDifficulty() -> void:
+	$SettingsContainer/DifficultyBtn.text = "Difficulty: " + DifficultyData[Globals.LevelDifficulty][0]
+	Globals.GATE_SPEED = DifficultyData[Globals.LevelDifficulty][1]
+	Globals.Q_CHANCE = DifficultyData[Globals.LevelDifficulty][2]
+	Globals.GATE_PUSH_FWD = DifficultyData[Globals.LevelDifficulty][3]
 
 func MuteSFX() -> void:
 	if AudioServer.is_bus_mute(1):

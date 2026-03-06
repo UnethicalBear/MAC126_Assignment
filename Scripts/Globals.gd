@@ -7,6 +7,7 @@ var GATE_PUSH_FWD: float = 2
 
 var MusicMuted: bool = false
 var SFXMuted: bool = false
+var LevelDifficulty: int = 1 # 0=easy, 1=medium, 2=hard
 
 var T: float=0
 var R: bool = false
